@@ -1,4 +1,5 @@
- pipeline {
+/* groovylint-disable-next-line CompileStatic */
+pipeline {
         agent any
         stages {
             stage('Checkout') {
@@ -8,32 +9,29 @@
                 }
             }
 
-         stage('Build') {
+        stage('Build') {
                 steps {
                     sh 'mvn clean verify'
-
                 }
-         }
+        }
 
-         stage('Deployment') {
+        stage('Deployment') {
                 steps {
-                 sh 'ls -la'
+                sh 'ls -la'
                 }
-         }
+        }
         }
 
             post {
-
                 always {
-                  emailext(
+            emailext(
                             subject: 'Status of the Spring Demo Pipeline',
+                            body: ' New Email',
                             // recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                             to: 'ashsy009@gmail.com',
+                            /* groovylint-disable-next-line DuplicateStringLiteral */
                             replyTo: 'ashsy009@gmail.com'
                     )
                 }
             }
-
- }
-
-
+}
