@@ -12,7 +12,15 @@ pipeline {
         stage('Build') {
                 steps {
                     sh 'mvn clean verify -s settings.xml'
-                }
+                    }
+        }
+
+        stage('Publish Results') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                junit 'target/surefire-reports/*.xml'
+                jacoco execPattern: 'target/*.exec'
+            }
         }
 
         stage('Deployment') {
