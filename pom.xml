@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>springwebdemo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT-20221010135501_bf8c247575cd03fac526506099a99b51de147559</version>
 	<name>springwebdemo</name>
 	<description>Project for Spring Web Demo</description>
 	<properties>
