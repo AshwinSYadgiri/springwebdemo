@@ -1,3 +1,4 @@
+---
 general:
   buildTool: 'maven'
   productiveBranch: 'master'
