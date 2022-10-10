@@ -33,7 +33,7 @@ pipeline {
             post {
                 always {
             emailext(
-                            subject: 'Status of the Spring Demo Pipeline',
+                            subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!',
                             body: 'New Email Jenkins',
                             // recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                             to: 'ashsy009@gmail.com',
