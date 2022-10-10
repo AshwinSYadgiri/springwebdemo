@@ -19,9 +19,3 @@ steps:
       notifyCulprits: false
       notificationAttachment: true
 
-stages:
-  'Pull-Request Voting':
-    mavenExecuteStaticCodeChecks: false
-    npmExecuteLint: false
-    executeSonarScan: false
-    stageLocking: false
