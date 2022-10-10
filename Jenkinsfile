@@ -34,7 +34,7 @@ pipeline {
                 always {
             emailext(
                             subject: 'Status of the Spring Demo Pipeline',
-                            body: 'New Email',
+                            body: 'New Email Jenkins',
                             // recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                             to: 'ashsy009@gmail.com',
                             /* groovylint-disable-next-line DuplicateStringLiteral */
