@@ -10,6 +10,7 @@ pipeline {
             }
 
         stage('Build') {
+              when { anyOf { branch 'master'; branch 'PR-*' } }
                 steps {
                     sh 'mvn clean verify -s settings.xml'
                     }
@@ -34,7 +35,7 @@ pipeline {
                 always {
             emailext(
                             subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!',
-                            body: 'New Email Jenkins',
+                            body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: Check console output at $BUILD_URL to view the results.',
                             // recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                             to: 'ashsy009@gmail.com',
                             /* groovylint-disable-next-line DuplicateStringLiteral */
