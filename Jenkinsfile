@@ -10,6 +10,9 @@ pipeline {
             }
 
         stage('Build') {
+             when {
+                branch 'PR-*'
+            }
                 steps {
                     sh 'mvn clean verify -s settings.xml'
                     }
