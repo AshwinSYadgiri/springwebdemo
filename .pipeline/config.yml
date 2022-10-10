@@ -15,7 +15,7 @@ steps:
     jacoco:
       active: true
       archive: true
-    mailSendNotification:
+   mailSendNotification:
       notificationRecipients: 'ashsy009@gmail.com'
       notifyCulprits: false
       notificationAttachment: true
